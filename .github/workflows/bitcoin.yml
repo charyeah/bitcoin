@@ -30,7 +30,7 @@ jobs:
         # Literal body:
         body: 价格出现巨大波动,现在的比特币价格是：1BTC=${{env.BTCPRICE}}!
         to: 764666894@qq.com
-        from: lsqls # <user@example.com>
+        from: ${{secrets.MAIL_USERNAME}} # <user@example.com>
         # Optional content type (defaults to text/plain):
         content_type: text/html
         # Optional attachments:
