@@ -19,3 +19,18 @@ jobs:
       run: npm install  -g coinmon
     - name: 'Get BTC Price'
       run:  echo "::set-env name=BTCPRICE::$(coinmon -t 1 |  grep BTC  | cut -d ' ' -f 10)"
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v2
+      with:
+        server_address: smtp.163.com
+        server_port: 465
+        username: ${{secrets.MAIL_USERNAME}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        subject: BTC Price
+        # Literal body:
+        body: 价格出现巨大波动,现在的比特币价格是：1BTC=${{env.BTCPRICE}}!
+        to: 764666894@qq.com
+        from: lsqls # <user@example.com>
+        # Optional content type (defaults to text/plain):
+        content_type: text/html
+        # Optional attachments:
