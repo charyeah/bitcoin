@@ -18,6 +18,8 @@ jobs:
         python-version: '3.x'
     - name: 'Install dependencies'
       run: python -m pip install --upgrade requests lxml jinja2 
+    - name: 'run get price script'
+      run: python bitcoin.py
     - name: Send mail
       if: ${{ env.sendmail == 'False' }}
       uses: dawidd6/action-send-mail@v2
