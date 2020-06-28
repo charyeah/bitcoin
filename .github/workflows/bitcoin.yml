@@ -22,4 +22,4 @@ jobs:
     - name: 'get price'
       run: python bitcoin.py
     - name: 'Send mail'
-      run: echo ${INFO}
+      run: echo ${{env.sendmail}}
