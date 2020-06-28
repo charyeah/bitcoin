@@ -34,7 +34,7 @@ jobs:
         subject: 比特币价格监控
         # Literal body:
         body: file://email.html
-        to: 764666894@qq.com
+        to: ${{ secrets.TO }}
         from: ${{secrets.MAIL_USERNAME}} # <user@example.com>
         # Optional content type (defaults to text/plain):
         content_type: text/html
