@@ -22,5 +22,5 @@ jobs:
     - name: 'get price'
       run: python bitcoin.py
     - name: 'Send mail'
-      if: ${{ env.sendmail == 'True'
+      if: ${{ env.sendmail == 'True'}}
       run: echo "Yes,I will send email to you"
