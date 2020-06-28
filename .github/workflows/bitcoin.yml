@@ -20,6 +20,7 @@ jobs:
     - name: 'Get BTC Price'
       run:  echo "::set-env name=BTCPRICE::$(coinmon -t 1 |  grep BTC  | cut -d ' ' -f 10)"
     - name: Send mail
+      if: ${{env.BTCPRICE<secrets.MAX && env.BTCPRICE>secrets.MIN}}
       uses: dawidd6/action-send-mail@v2
       with:
         server_address: smtp.163.com
