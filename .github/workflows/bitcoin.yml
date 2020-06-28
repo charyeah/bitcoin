@@ -7,10 +7,15 @@ on:
   schedule:
     - cron: '*/10 * * * *'
 jobs:
-  get_points:
+  GetBtcPrice:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
     - name: 'Setup coinmon'
-      run: npm install  coinmon
+      run: npm install  -g coinmon
     - name: 'Get BTC Price'
       run:  echo "::set-env name=BTCPRICE::$(coinmon -t 1 |  grep BTC  | cut -d ' ' -f 10)"
