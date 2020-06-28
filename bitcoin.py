@@ -3,8 +3,11 @@ import requests
 import os
 from lxml import etree
 from jinja2 import Environment, PackageLoader
-#MAX，MIN设置在secrets中
 max=10000;min=4000
+if 'MAX' in os.environ:
+    max=float(os.getenv('MAX')) 
+if 'MIN' in os.environ:
+    min=float(os.getenv('MIN'))
 sendemail=False;strategy="继续持有"
 url='https://price.btcfans.com/'
 html = etree.HTML(requests.get(url).text)
