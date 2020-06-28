@@ -19,7 +19,7 @@ jobs:
     - name: 'Install dependencies'
       run: python -m pip install --upgrade requests lxml jinja2 
     - name: Send mail
-      if: ${{env.sendmail=="False"}}
+      if: ${{ env.sendmail == 'False' }}
       uses: dawidd6/action-send-mail@v2
       with:
         server_address: smtp.163.com
