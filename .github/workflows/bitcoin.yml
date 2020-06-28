@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 'Setup coinmon'
-      run: npm install -g coinmon
+      run: npm install  coinmon
     - name: 'Get BTC Price'
       run:  echo "::set-env name=BTCPRICE::$(coinmon -t 1 |  grep BTC  | cut -d ' ' -f 10)"
