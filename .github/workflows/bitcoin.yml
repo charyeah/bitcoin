@@ -28,7 +28,7 @@ jobs:
         password: ${{secrets.MAIL_PASSWORD}}
         subject: BTC Price
         # Literal body:
-        body: 价格出现巨大波动,现在的比特币价格是：1BTC=${{env.BTCPRICE}}!
+        body: 价格出现巨大波动,现在的比特币价格是：1BTC=$ ${{env.BTCPRICE}} !
         to: 764666894@qq.com
         from: ${{secrets.MAIL_USERNAME}} # <user@example.com>
         # Optional content type (defaults to text/plain):
