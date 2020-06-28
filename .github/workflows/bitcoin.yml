@@ -29,7 +29,7 @@ jobs:
         password: ${{secrets.MAIL_PASSWORD}}
         subject: 比特币价格监控
         # Literal body:
-        body: .file://template.html
+        body: file://template.html
         to: 764666894@qq.com
         from: ${{secrets.MAIL_USERNAME}} # <user@example.com>
         # Optional content type (defaults to text/plain):
